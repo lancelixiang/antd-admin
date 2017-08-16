@@ -1,7 +1,8 @@
-import React, { PropTypes } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 import { connect } from 'dva'
 import { Button, Row, Form, Input } from 'antd'
-import { config } from '../../utils'
+import { config } from 'utils'
 import styles from './index.less'
 
 const FormItem = Form.Item
@@ -37,28 +38,26 @@ const Login = ({
             rules: [
               {
                 required: true,
-                message: '请填写用户名',
               },
             ],
-          })(<Input size="large" onPressEnter={handleOk} placeholder="用户名" />)}
+          })(<Input size="large" onPressEnter={handleOk} placeholder="Username" />)}
         </FormItem>
         <FormItem hasFeedback>
           {getFieldDecorator('password', {
             rules: [
               {
                 required: true,
-                message: '请填写密码',
               },
             ],
-          })(<Input size="large" type="password" onPressEnter={handleOk} placeholder="密码" />)}
+          })(<Input size="large" type="password" onPressEnter={handleOk} placeholder="Password" />)}
         </FormItem>
         <Row>
           <Button type="primary" size="large" onClick={handleOk} loading={loginLoading}>
-            登录
+            Sign in
           </Button>
           <p>
-            <span>账号：guest</span>
-            <span>密码：guest</span>
+            <span>Username：guest</span>
+            <span>Password：guest</span>
           </p>
         </Row>
 
